@@ -3,6 +3,12 @@
 		padding: 150px 0;
 	}
 }
+// @media screen and (max-width: 1300px) {
+// 	#eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider-inner {
+// 		margin: -15px !important;
+// 		max-width: none !important;
+// 	}
+// }
 @media screen and (max-width:1200px) {
 	.section {
 		&__title {
@@ -16,6 +22,13 @@
 		&__price {
 			font-size: $fs16;
 			line-height: 1.375;
+		}
+	}
+
+	.stages-work {
+		&-card {
+			width: 23%;
+			height: 350px;
 		}
 	}
 
@@ -154,6 +167,15 @@
 		}
 	}
 
+	.stages-work {
+		&-card {
+			width: 48%;
+			height: 400px;
+
+			margin-bottom: 50px;
+		}
+	}
+
 	.about {
 		&__right {
 			
@@ -258,7 +280,13 @@
 			margin-bottom: 30px;
 		}
 
-		&-form__input {
+		// &-form__input {
+		// 	margin-top: 30px;
+		// }
+	}
+
+	.form {
+		&__input {
 			margin-top: 30px;
 		}
 	}
@@ -283,6 +311,12 @@
 	.order {
 		&__content {
 			// column-gap: 10px;
+		}
+	}
+
+	.stages-work {
+		&-card {
+			height: 300px;
 		}
 	}
 
@@ -404,6 +438,12 @@
 		}
 	}
 
+	.reviews-slide {
+		&__text {
+			margin-bottom: 30px;
+		}
+	}
+
 	.contacts {
 		&__content {
 			flex-direction: column;
@@ -452,6 +492,10 @@
 
 	.reviews-swiper {
 		margin-bottom: 50px;
+
+		&__wrapper {
+			margin-bottom: 50px;
+		}
 
 		&__nav {
 			display: flex;
@@ -523,6 +567,13 @@
 			img {
 				width: 10px;
 			}
+		}
+	}
+
+	.stages-work {
+		&-card {
+			width: 100%;
+			height: 300px;
 		}
 	}
 

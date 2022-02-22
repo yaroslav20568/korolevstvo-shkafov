@@ -2,11 +2,11 @@ import { hello } from './functions/hello.js';
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 
-window.addEventListener('unload', () => {
-	// window.scrollTo(0, 0);
-	document.documentElement.scrollTop = 0;
-	// closeModal(document.querySelector('.active-modal'));
-});
+// window.addEventListener('unload', () => {
+// 	// window.scrollTo(0, 0);
+// 	document.documentElement.scrollTop = 0;
+// 	// closeModal(document.querySelector('.active-modal'));
+// });
 
 if(navigator.userAgent.match('iPhone') || navigator.userAgent.match('Android') || navigator.userAgent.match('iPad') || navigator.userAgent.match('RIM')) {
 	console.log('mobile');

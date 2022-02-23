@@ -19,6 +19,7 @@ import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
 import { zip } from './gulp/tasks/zip.js';
 import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
+import { ftp } from './gulp/tasks/ftp.js';
 
 function watcher() {
     gulp.watch(path.watch.files, copy);
@@ -35,7 +36,8 @@ const mainTask = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images))
 const dev = gulp.series(reset, mainTask, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTask);
 const deployZIP = gulp.series(reset, mainTask, zip);
+const deployFTP = gulp.series(reset, mainTask, ftp);
 
-export { dev, build, deployZIP };
+export { dev, build, deployZIP, deployFTP };
 
 gulp.task('default', dev);

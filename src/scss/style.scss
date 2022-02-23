@@ -502,7 +502,7 @@ body {
 /*--- STAGES-WORK ---*/
 .stages-work {
 	position: relative;
-	padding: 150px 0 0 0 !important;
+	padding: 150px 0 0 0;
 	
 	&:before {
 		@include beforeAfterStyles(block, 100%, 83%, $content: "");

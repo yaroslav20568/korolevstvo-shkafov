@@ -48,46 +48,46 @@ window.addEventListener('DOMContentLoaded', () => {
 	/* SWIPER */
 	// import Swiper, { Navigation, Pagination } from 'swiper';
 	
-	Swiper.use([Navigation, Pagination]);
-	
-	const swiperInstagram = new Swiper('.instagram__swiper', {
-		modules: [Navigation, Pagination],
 
-		navigation: {
-			nextEl: '.instagram-swiper__button-next',
-			prevEl: '.instagram-swiper__button-prev',
-		},
-		scrollbar: {
-			el: '.swiper-scrollbar',
-		},
 	
-		slidesPerView: 4,
-		slidesPerGroup: 4,
-		spaceBetween: 30,
+	// const swiperInstagram = new Swiper('.instagram__swiper', {
+	// 	modules: [Navigation, Pagination],
+
+	// 	navigation: {
+	// 		nextEl: '.instagram-swiper__button-next',
+	// 		prevEl: '.instagram-swiper__button-prev',
+	// 	},
+	// 	scrollbar: {
+	// 		el: '.swiper-scrollbar',
+	// 	},
 	
-		breakpoints: {
-			1201: {
-				slidesPerView: 4,
-				slidesPerGroup: 4,
-				// spaceBetween: 30
-			},
-			841: {
-				slidesPerView: 3,
-				slidesPerGroup: 3,
-				spaceBetween: 20
-			},
-			577: {
-				slidesPerView: 2,
-				slidesPerGroup: 2,
-				spaceBetween: 20
-			},
-			280: {
-				slidesPerView: 1,
-				slidesPerGroup: 1,
-				spaceBetween: 0
-			}
-		}
-	});
+	// 	slidesPerView: 4,
+	// 	slidesPerGroup: 4,
+	// 	spaceBetween: 30,
+	
+	// 	breakpoints: {
+	// 		1201: {
+	// 			slidesPerView: 4,
+	// 			slidesPerGroup: 4,
+	// 			// spaceBetween: 30
+	// 		},
+	// 		841: {
+	// 			slidesPerView: 3,
+	// 			slidesPerGroup: 3,
+	// 			spaceBetween: 20
+	// 		},
+	// 		577: {
+	// 			slidesPerView: 2,
+	// 			slidesPerGroup: 2,
+	// 			spaceBetween: 20
+	// 		},
+	// 		280: {
+	// 			slidesPerView: 1,
+	// 			slidesPerGroup: 1,
+	// 			spaceBetween: 0
+	// 		}
+	// 	}
+	// });
 	
 	
 	const swiperReviews = new Swiper('.reviews__swiper', {
@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			el: '.swiper-scrollbar',
 		},
 	
-		// speed: 1000,
+		speed: 500,
 	
 		slidesPerView: 1,
 		slidesPerGroup: 1
@@ -180,6 +180,15 @@ window.addEventListener('DOMContentLoaded', () => {
 	document.body.addEventListener('keydown', (e) => {
 		if(e.keyCode === 27) {
 			closeModal(document.querySelector('.active-modal'));
+		}
+	});
+
+
+	$(document).on('af_complete', function(event, res) {
+		if(res.success) {
+			if(document.querySelector('.active-modal')) {
+				closeModal(document.querySelector('.active-modal'));
+			}
 		}
 	});
 });

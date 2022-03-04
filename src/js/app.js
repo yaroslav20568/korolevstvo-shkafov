@@ -187,8 +187,42 @@ window.addEventListener('DOMContentLoaded', () => {
 	$(document).on('af_complete', function(event, res) {
 		if(res.success) {
 			if(document.querySelector('.active-modal')) {
-				closeModal(document.querySelector('.active-modal'));
+				setTimeout(() => {
+					closeModal(document.querySelector('.active-modal'));
+				}, 500);
 			}
 		}
 	});
+
+
+	/* PADDING ADD */
+
+	const addPaddingElement = (elems) => {
+		const heightValueArray = [];
+		let maxHeight = 0;
+		let maxHeightIndex = 0;
+	
+		elems.forEach((elem, index) => {
+			heightValueArray.push(+window.getComputedStyle(elem).height.replace('px', ''));
+	
+			if(+window.getComputedStyle(elem).height.replace('px', '') > maxHeight) {
+				maxHeight = +window.getComputedStyle(elem).height.replace('px', '');
+				maxHeightIndex = index;
+			}
+		});
+	
+		for(let i = 0; i < heightValueArray.length; i++) {
+			if(heightValueArray[i] != maxHeight) {
+				let diffPadding = +window.getComputedStyle(elems[maxHeightIndex]).height.replace('px', '') - +window.getComputedStyle(elems[i]).height.replace('px', '');
+				elems[i].style.paddingBottom = `${+window.getComputedStyle(elems[i]).paddingBottom.replace('px', '') + diffPadding}px`;
+			}
+		}
+	
+		// console.log(heightValueArray);
+		// console.log(maxHeight);
+		// console.log(maxHeightIndex);
+	};
+	
+	const allOrderItems = document.querySelectorAll('.order-card__info');
+	addPaddingElement(allOrderItems);
 });

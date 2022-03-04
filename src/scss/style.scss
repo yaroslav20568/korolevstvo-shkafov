@@ -67,10 +67,10 @@ body {
 	}
 
 	&__img {
-		width: 238px;
-		height: 60px;
-		background-image: url('../img/logo-big.svg');
-		background-repeat: no-repeat;
+		// width: 238px;
+		// height: 60px;
+		// background-image: url('../img/logo-big.svg');
+		// background-repeat: no-repeat;
 	}
 }
 /*--- /HEADER ---*/
@@ -315,7 +315,7 @@ body {
 
 	&__content {
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-between;
 		flex-wrap: wrap;
 		
 		// gap: 50px 30px;
@@ -332,10 +332,11 @@ body {
 	// 	}
 	// }
 
-	// &__button-wrapper {
-	// 	text-align: center;
-	// 	margin-top: 100px;
-	// }
+	&__button-wrapper {
+		// text-align: center;
+		// margin-top: 100px;
+		margin-top: 10px !important;
+	}
 
 	&__button {
 		@include textStyle($fs16, $fw600, 1.357, $ff_OpenSans, $white);
@@ -425,16 +426,18 @@ body {
 	// height: 543px;
 	margin-bottom: 50px;
 
-	&:nth-child(4), &:nth-child(5), &:nth-child(6) {
-		margin-bottom: 0;
-	}
+	// &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+	// 	margin-bottom: 0;
+	// }
 
 	&__top {
 	}
 
 	&__img {
-		max-width: 100%;
-		height: auto;
+		width: 100%;
+		// height: auto;
+		height: 270px;
+		object-fit: cover;
 
 		// min-height: 270px;
 		// object-fit: cover;
@@ -537,6 +540,7 @@ body {
 	height: 500px;
 	position: relative;
 	// padding: 0 15px;
+	margin-bottom: 50px;
 
 	&__inner {
 		
@@ -669,6 +673,7 @@ body {
 
 /*--- INSTAGRAM ---*/
 .instagram {
+	padding: 175px 0 150px;
 
 	&__info {
 		// margin-bottom: 90px;
@@ -916,13 +921,20 @@ body {
     	justify-content: flex-end;
 	}
 
+	&__small-img, &__big-img {
+		height: 400px;
+		object-fit: cover;
+	}
+
 	&__small-img {
+		width: 165px;
 		position: absolute;
 		top: 100px;
 		left: 0;
 	}
 
 	&__big-img {
+		width: 270px;
 		position: absolute;
 		right: 0;
 		bottom: 100px;
@@ -1001,6 +1013,12 @@ body {
 		// margin: 0 auto;
 		// text-align: center;
 		// line-height: 1.6;
+	}
+
+	&__no-reviews {
+		font-size: 16px;
+		width: 100%; 
+		text-align: center
 	}
 
 	&__content {
@@ -1295,7 +1313,7 @@ body {
 		display: flex;
 		align-items: center;
 		margin-top: 30px;
-		margin-bottom: 50px;
+		// margin-bottom: 50px;
 
 		span {
 			padding-left: 39px;
@@ -1340,7 +1358,12 @@ body {
 	}
 
 	&__btn {
+		margin-top: 50px;
 		cursor: pointer;
+	}
+
+	&__error {
+		margin-top: 10px;
 	}
 }
 
